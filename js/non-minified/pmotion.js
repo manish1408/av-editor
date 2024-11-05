@@ -100,7 +100,7 @@
         var currenttime = 0;
         var timelinetime = 5;
         const offset_left = 20;
-        var duration = 4000;
+        var duration = 50000;
         var keyframes = [];
         var p_keyframes = [];
         var props = ['left', 'top', 'scaleX', 'scaleY', 'width', 'height', 'angle', 'opacity', 'fill', 'strokeWidth', 'stroke', 'shadow.color', 'shadow.offsetX', 'shadow.offsetY', 'shadow.blur', 'charSpacing'];
@@ -2720,7 +2720,8 @@
             if (getObjects && getObjects.length > 0) {
                 getObjects.forEach(function (obj) {
                     if (obj.get('assetType') && obj.get('assetType') == 'audio') {
-                        deleteObject(obj, canvas);
+                        console.log("tried deleting the object");
+                        // deleteObject(obj, canvas);
                     }
                 });
             }
@@ -9129,6 +9130,7 @@
         var materialIcons = new FontFaceObserver("Material Icons");
         materialIcons.load(null, 10000).then(function() {
             selector.find('#main-loader').fadeOut(200);
+            
             selector.removeClass('loading');
             }).catch(function(e) {
             console.log(e);
